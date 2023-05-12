@@ -11,8 +11,12 @@ form.addEventListener("submit", (e) => {
   button = document.createElement("button")
   button.textContent = "削除"
   li.appendChild(button)
-  //todoの中身を空にする
-  todo.value = ""("click", (e) => {
+  todo.value = ""
+
+  //削除ボタンを押したらliを削除する
+  button.addEventListener("click", (e) => {
+    e.preventDefault()
     e.target.parentNode.remove()
+    //todoの中身を空にする
   })
 })
